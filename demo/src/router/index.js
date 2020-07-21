@@ -42,6 +42,41 @@ export default new Router({
           name: '角色管理'
         }
       },
+      {
+        path: '/sort',
+        component: () => import('@/components/views/sort'),
+        meta: {
+          name: '商品分类'
+        }
+      },,
+      {
+        path: '/specs',
+        component: () => import('@/components/views/specs'),
+        meta: {
+          name: '商品规格'
+        }
+      },
+      // {
+      //   path: '/member',
+      //   component: () => import('@/components/views/member'),
+      //   meta:{
+      //       name:'会员管理'
+      //   }
+      // },
+      // {
+      //   path: '/banner',
+      //   component: () => import('@/components/views/banner'),
+      //   meta:{
+      //       name:'轮播图管理'
+      //   }
+      // },
+      {
+        path: '/seck',
+        component: () => import('@/components/views/seck'),
+        meta:{
+            name:'限时秒杀管理'
+        }
+      },
       
     ]
   },

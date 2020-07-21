@@ -7,7 +7,7 @@
       <el-button size="small" type="primary" @click="add">添加</el-button>
     </div>
     <!-- 表格信息 -->
-    <el-table :data="getStateUserList" border style="width: 100%" >
+    <el-table :data="getStateUserList" border style="width: 100%">
       <el-table-column prop="uid" label="用户编号"></el-table-column>
       <el-table-column prop="username" label="用户名称"></el-table-column>
       <el-table-column prop="rolename" label="所属角色"></el-table-column>
@@ -27,8 +27,9 @@
     <el-pagination
       background
       layout="prev, pager, next"
-      :total= 'total' 
-      @current-change="currentChange"  
+      :total="total"
+      :page-size="pageInfo.size"
+      @current-change="currentChange"
     ></el-pagination>
     <!-- 弹框内容 -->
     <el-dialog
@@ -100,9 +101,12 @@ export default {
       editId: 0,
       dialogIsShow: false, //是否出现弹框
       rules: {},
-      size:10,
-      page:1,
-      total:1
+      size: 10,
+      pageInfo: {
+        size: 10,
+        page: 1
+      },
+      total: 0
     };
   },
   computed: {
@@ -111,12 +115,9 @@ export default {
   mounted() {
     //组件一加载就调取菜单接口
     //触发才调取vuex中的列表
-    this.getActionUserList();
+    // this.getActionUserList();
     this.getActionRoleList();
-    getuserCount().then(res=>{
-        // console.log(res.data.list[0].total)
-        this.total = res.data.list[0].total
-      })
+    this.getCount();
   },
   methods: {
     //关闭弹框事件
@@ -172,7 +173,7 @@ export default {
           getuserDelete({ uid }).then(res => {
             if (res.data.code == 200) {
               //重新调取接口列表
-              this.getActionUserList();
+              this.getCount();
               this.$message.success(res.data.msg);
             } else {
               this.$message.error(res.data.msg);
@@ -201,7 +202,7 @@ export default {
                 //清空输入框
                 this.reset();
                 //添加成功重新查询列表
-                this.getActionUserList();
+                this.getCount();
                 this.$message.success(res.data.msg);
               } else if (res.data.code == 500) {
                 this.$message.warning(res.data.msg);
@@ -220,7 +221,7 @@ export default {
                 //清空输入框
                 this.reset();
                 //添加成功重新查询列表
-                this.getActionUserList();
+                this.getCount();
                 this.$message.success(res.data.msg);
               } else if (res.data.code == 500) {
                 this.$message.warning(res.data.msg);
@@ -236,14 +237,21 @@ export default {
       });
     },
     currentChange(val) {
-      //val是当前页码
-      // console.log(val)
-      // this.page = val;
-      // this.getActionUserList();
-      getuserCount().then(res=>{
+      this.pageInfo.page = val;
+      this.$store.dispatch("getActionUserList", this.pageInfo);
+    },
+    getCount() {
+      getuserCount().then(res => {
         // console.log(res.data.list[0].total)
-        this.total = res.data.list[0].total
-      })
+        if (res.data.code == 200) {
+          this.total = res.data.list[0].total;
+          if (this.pageInfo.page != 1 && this.getStateUserList.length == 1) {
+            this.pageInfo.page--;
+          }
+          //调取获取用户接口列表的行动
+          this.$store.dispatch("getActionUserList", this.pageInfo);
+        }
+      });
     }
   },
   components: {
@@ -259,5 +267,10 @@ export default {
 
 .el-input {
   width: 85%;
+}
+
+.el-pagination {
+  margin: 10px;
+  float: right;
 }
 </style>

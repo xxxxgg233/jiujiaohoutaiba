@@ -1,7 +1,10 @@
 import {
   getMenuList,
   getroleList,
-  getuserList
+  getuserList,
+  getcateList,
+  getspecsList,
+  getgoodsList
 } from '../util/axios'
 
 export default {
@@ -32,12 +35,57 @@ export default {
   //封装一个获取管理员列表
   getActionUserList({
     commit
-  }) {
-    getuserList({size:10,page:1})
+  }, pageInfo) {
+    getuserList(pageInfo)
       .then(res => {
         if (res.data.code == 200) {
-          commit('reqUserList', res.data.list)
+        //针对返回的结果进行转化，目的就是转化null
+        let list = []
+        list = res.data.list == null ? [] : res.data.list
+        commit('reqUserList', list)
         }
       })
   },
+  //商品分类
+  getActionCateList({
+    commit
+  }) {
+    getcateList({
+      istree: 1
+    })
+      .then(res => {
+        if (res.data.code == 200) {
+          commit('reqCateList', res.data.list)
+        }
+      })
+  },
+  //封装一个获取商品规格列表
+  getActionSpecsList({
+    commit
+  }, pageInfo) {
+    getspecsList(pageInfo)
+      .then(res => {
+        if (res.data.code == 200) {
+          //针对返回的结果进行转化，目的就是转化null
+          let list = []
+          list = res.data.list == null ? [] : res.data.list
+          commit('reqSpecsList', list)
+        }
+      })
+  },
+  //封装一个获取商品管理列表
+  getActionGoodsList({
+    commit
+  }, pageInfo) {
+    getgoodsList(pageInfo)
+      .then(res => {
+        if (res.data.code == 200) {
+          //针对返回的结果进行转化，目的就是转化null
+          let list = []
+          list = res.data.list == null ? [] : res.data.list
+          commit('reqGoodsList', list)
+        }
+      })
+  },
+
 }
