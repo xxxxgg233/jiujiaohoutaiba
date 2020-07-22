@@ -1,0 +1,112 @@
+@charset "utf-8";
+@import "public.css";
+
+
+.wrap{
+    background: #fff;
+}
+/*头部*/
+.wrap .header{
+    background: #fff;
+    padding: 0.43rem 0.23rem 0 0.24rem;
+    a{
+        padding: 0.28rem 0 0.28rem;
+        display: block;
+        width: .28rem;
+        height: .28rem;
+        background: #fff;
+        position: relative;
+        i{
+            width: 0;
+            height: 0;
+            border-width: .14rem .14rem .14rem 0;
+            border-style: solid;
+            border-color: transparent #fff;
+            position: absolute;
+            right: 0;
+            top: .28rem;
+        }
+        .left_arr{
+            border-right-color: #101010;
+            left: .1rem;
+        }
+    }
+    .logo{
+        width: 1.5rem;
+        height: 0.29rem;
+        img{width: 1.5rem;
+            height: 0.29rem;}
+    }
+    .menu{
+        span{
+            background: #101010;
+        }
+    }
+}
+
+.form{
+    form{
+        padding-top: .24rem;
+        input{
+            width: 6.23rem;
+            height: .77rem;
+            background: #f26b11;
+            border-radius: 0.35rem;
+            text-align: center;
+            color: #fff;
+            font: 0.26rem/0.77rem "微软雅黑";
+            margin-left: .62rem;
+            &::-webkit-input-placeholder{
+                color: #fff;
+            }
+            &::-moz-placeholder{
+                color: #fff;
+            }
+        }
+    }
+}
+
+.list{
+    ul{
+        li{
+            height: 2.07rem;
+            margin: .28rem .25rem 0 .23rem;
+            border-bottom:1px solid #d1d1d1;
+            a{
+                display: block;
+                img{
+                    float: left;  
+                    width: 1.47rem;
+                    height: 1.6rem; 
+                    padding: .29rem 0 0 .2rem;
+                }
+                .fl{
+                    height: 2.07rem;
+                    margin-left: .43rem;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    // align-items: baseline;
+                    h3{
+                        // padding-top: .21rem;
+                        font: .26rem/.37rem "微软雅黑";
+                        color: #343434;
+                    }
+                    p{
+                        font: .3rem/.53rem Arial;
+                        color:#ed3638;
+                        i{
+                            font-size: .24rem;
+                            font-family: "微软雅黑";
+                        }
+                    }
+                    span{
+                        font: .26rem/.41rem "微软雅黑";
+                        color: #9b9b9b;
+                    }
+                    
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,226 @@
+@charset "utf-8";
+@import "public.css";
+
+
+body {
+    background: #f1f1f1;
+}
+
+.wrap {
+    height: 100%;
+}
+
+.wrap .header {
+    background: #f26b11;
+    padding   : 0.43rem 0.23rem 0 0.24rem;
+
+    a {
+        padding   : 0.28rem 0 0.28rem;
+        display   : block;
+        width     : .28rem;
+        height    : .28rem;
+        background: #f26b11;
+        position  : relative;
+
+        i {
+            width       : 0;
+            height      : 0;
+            border-width: .14rem .14rem .14rem 0;
+            border-style: solid;
+            border-color: transparent #f26b11;
+
+            position: absolute;
+            right   : 0;
+            top     : .28rem;
+        }
+
+        .left_arr {
+            border-right-color: #fff;
+            left              : .1rem;
+        }
+    }
+
+    em {
+        padding-top: .24rem;
+        font       : 0.34rem/0.38rem "微软雅黑";
+        color      : #fff;
+    }
+
+    .menu {
+        span {
+            background: #fff;
+        }
+    }
+}
+
+.cartIn {
+    background: #fff;
+    min-height: calc(~"100% - 1.28rem");
+
+    ul {
+        padding-top: .3rem;
+        overflow: hidden;
+        li {
+            display      : flex;
+            height       : 1.72rem;
+            box-shadow   : 0 0 0.06rem .06rem #eeecec;
+            margin-bottom: .3rem;
+            position: relative;
+
+            input[type=checkbox] {
+                -webkit-appearance: checkbox;
+                // outline        : unset;
+                // border         : solid;
+                width             : .34rem;
+                height            : .34rem;
+                // border-radius  : 50%;
+                margin            : .7rem .43rem 0 .24rem;
+                vertical-align    : middle;
+            }
+
+            a {
+                flex-grow: 1;
+                width  : 2.74rem;
+                display: flex;
+
+                img {
+                    margin: .39rem .39rem 0 0;
+                    width : 1.01rem;
+                    height: 1.02rem;
+                }
+
+                div {
+                    p {
+                        padding-top: .06rem;
+                        font       : .26rem/.55rem "微软雅黑";
+                        color      : #333333;
+                    }
+
+                    span {
+                        font : .23rem/.52rem "微软雅黑";
+                        color: #666666;
+                    }
+
+                    em {
+                        font : .32rem/.47rem Arial;
+                        color: #e5383c;
+                        margin-left: -.03rem;
+                    }
+                }
+            }
+
+            .quantity {
+                display: flex;
+                margin: .89rem .31rem 0 0;
+                // position: relative;
+                // bottom: .24rem;
+                // right: .31rem;
+                a {
+                    display: block;
+                    font: .28rem/.57rem Arial;
+                    color: #505050;
+                    width: .62rem;
+                    height: .57rem;
+                    text-align: center;
+                    border: 1px solid #505050;
+                }
+
+                input {
+                    width: .79rem;
+                    height: .57rem;
+                    font: .28rem/.57rem Arial;
+                    color: #505050;
+                    text-align: center;
+                    border: 1px solid #505050;
+                    border-left: none;
+                    border-right: none;
+                }
+
+                .del {
+                    border-radius: 0.04rem 0 0 0.04rem;
+                }
+
+                .add {
+                    border-radius: 0 0.04rem 0.04rem 0 ;
+                }
+
+            }
+            .delete{
+                a{
+                    display: block;
+                    font: .24rem/1.72rem "微软雅黑";
+                    color: #fff;
+                    text-align: center;
+                    width: .98rem;
+                    background: #e43a3d;
+                    position: absolute;
+                    right: -.98rem;
+                    bottom: 0;
+                }
+            }
+        }
+        .active{
+            transform: translateX(-.98rem);
+        }
+    }
+}
+
+.refer {
+    height         : 1.14rem;
+    background     : #fff;
+    border-top     : 1px solid #ebebeb;
+    display        : flex;
+    justify-content: space-between;
+    position       : fixed;
+    left           : 50% -3.75rem;
+    bottom         : 1.2rem;
+    width          : 7.5rem;
+    box-sizing     : border-box;
+
+    label {
+        font : .24rem/1.14rem "微软雅黑";
+        color: #666666;
+
+        input {
+            -webkit-appearance: checkbox;
+            // outline        : unset;
+            // border         : solid;
+            width             : .34rem;
+            height            : .34rem;
+            // border-radius  : 50%;
+            margin-left       : .24rem;
+            margin-right      : .15rem;
+            vertical-align    : middle;
+        }
+    }
+
+    .total {
+        display        : flex;
+        justify-content: space-between;
+
+        p {
+            padding   : .15rem .38rem 0 0;
+            font      : .3rem/.46rem "微软雅黑";
+            color     : #333333;
+            text-align: right;
+
+            span {
+                color: #e43a3b;
+            }
+
+            i {
+                font : .2rem/.37rem "微软雅黑";
+                color: #a4a4a4;
+            }
+        }
+
+        a {
+            display   : block;
+            width     : 2.47rem;
+            font      : .3rem/1.14rem "微软雅黑";
+            color     : #fff;
+            text-align: center;
+            background: #f26b11;
+        }
+    }
+}

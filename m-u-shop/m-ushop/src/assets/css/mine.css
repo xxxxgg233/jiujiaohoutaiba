@@ -1,0 +1,198 @@
+@charset "utf-8";
+@import "public.css";
+body {
+  background: #f1f1f1;
+}
+.wrap {
+  height: 100%;
+}
+.wrap .header {
+  background: #f26b11;
+  padding: 0.43rem 0.23rem 0 0.24rem;
+}
+.wrap .header a {
+  padding: 0.28rem 0 0.28rem;
+  display: block;
+  width: .28rem;
+  height: .28rem;
+  background: #f26b11;
+  position: relative;
+}
+.wrap .header a i {
+  width: 0;
+  height: 0;
+  border-width: .14rem .14rem .14rem 0;
+  border-style: solid;
+  border-color: transparent #f26b11;
+  position: absolute;
+  right: 0;
+  top: .28rem;
+}
+.wrap .header a .left_arr {
+  border-right-color: #fff;
+  left: .1rem;
+}
+.wrap .header em {
+  padding-top: .24rem;
+  font: 0.34rem/0.38rem "微软雅黑";
+  color: #fff;
+}
+.wrap .header .menu span {
+  background: #fff;
+}
+.infor {
+  height: 2.06rem;
+  background: #f26b11;
+  padding: 0 .38rem 0 .23rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.infor .id {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.infor .id a {
+  display: block;
+  width: 1.42rem;
+  height: 1.42rem;
+  border: 0.05rem solid #fff;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: .28rem .26rem 0 .09rem;
+}
+.infor .id a img {
+  width: 1.42rem;
+  margin: 0 auto;
+}
+.infor .id div p {
+  font: 0.3rem/0.53rem "微软雅黑";
+  color: #fff;
+  margin-top: .6rem;
+}
+.infor .id div span {
+  font: italic 0.28rem/0.42rem "微软雅黑";
+  color: #090816;
+}
+.infor .sign {
+  display: block;
+  width: 1.59rem;
+  height: .71rem;
+  font: 0.26rem/0.71rem "微软雅黑";
+  color: #f26b11;
+  text-align: center;
+  margin-top: .74rem;
+  background: #fff;
+  border-radius: .05rem;
+}
+.mineIcon {
+  height: 1.42rem;
+  padding: 0 .66rem 0 .52rem;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.mineIcon a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font: 0.24rem/0.57rem "微软雅黑";
+  color: #676767;
+  margin-top: .35rem;
+}
+.mineIcon a .mineIcon1 {
+  width: .34rem;
+  height: .34rem;
+  margin-bottom: 0;
+}
+.mineIcon a .mineIcon2 {
+  width: .38rem;
+  height: .30rem;
+  margin-bottom: .04rem;
+}
+.mineIcon a .mineIcon3 {
+  width: .34rem;
+  height: .29rem;
+  margin-bottom: .05rem;
+}
+.mineMenu {
+  margin-top: .21rem;
+  min-height: calc(100% - 4.97rem);
+  background: #fff;
+}
+.mineMenu ul li {
+  padding: 0 .23rem;
+  height: 1.17rem;
+  border-bottom: .01rem solid #d8d8d8;
+}
+.mineMenu ul li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: url(../images/iconMine_4.jpg) no-repeat 0.14rem center / 0.36rem 0.4rem;
+}
+.mineMenu ul li a p {
+  margin-left: .71rem;
+  font: 0.26rem/1.17rem "微软雅黑";
+  color: #5d5d5d;
+}
+.mineMenu ul li a span {
+  margin-top: .50rem;
+  width: .24rem;
+  height: .24rem;
+  background: #fff;
+  position: relative;
+}
+.mineMenu ul li a span i {
+  width: 0;
+  height: 0;
+  border-width: .12rem 0 .12rem .12rem;
+  border-style: solid;
+  border-color: transparent #fff;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.mineMenu ul li a span .right_arr {
+  border-left-color: #adadad;
+  left: 1px;
+}
+.mineMenu ul li a span b {
+  display: block;
+  width: 1rem;
+  position: absolute;
+  left: -1.1rem;
+  bottom: -0.03rem;
+  font: 0.24rem "微软雅黑";
+  color: #f26b11;
+}
+.mineMenu ul li .mineMenu2 {
+  background: url(../images/iconMine_5.jpg) no-repeat 0.12rem center / 0.36rem 0.36rem;
+}
+.mineMenu ul li .mineMenu3 {
+  background: url(../images/iconMine_6.jpg) no-repeat 0.05rem center / 0.46rem 0.32rem;
+}
+.mineMenu ul li .mineMenu4 {
+  background: url(../images/iconMine_7.jpg) no-repeat 0.13rem center / 0.36rem 0.34rem;
+}
+.mineMenu ul li .mineMenu5 {
+  background: url(../images/iconMine_8.jpg) no-repeat 0.1rem center / 0.38rem 0.36rem;
+}
