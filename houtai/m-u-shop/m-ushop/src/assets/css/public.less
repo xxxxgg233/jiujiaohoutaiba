@@ -1,0 +1,101 @@
+@charset "utf-8";
+@import "reset.css";
+
+html,body{
+    height: 100%;
+}
+body {
+    background: #f1f1f1;
+  }
+.wrap{
+    max-width: 7.5rem;
+    margin: 0 auto;
+}
+@colWhi:#fff;
+/*头部*/
+.wrap .header{
+    display: flex;
+    justify-content: space-between;
+    background: @colWhi;
+    padding: 0.43rem 0.23rem 0 0.24rem;
+    a{
+        padding: 0.28rem 0 0.28rem;
+        img{
+            width: 1.5rem;
+            height: 0.29rem;
+        }
+    }
+    form{
+        padding-top: .24rem;
+        input{
+            width: 3.03rem;
+            height: 0.38rem;
+            background: #eee;
+            border-radius: 0.05rem;
+            text-align: center;
+            color: #b8b8b8;
+            font: 0.18rem/0.38rem "微软雅黑";
+            
+        }
+    }
+    .menu{
+        display: flex;
+        justify-content: space-between;
+        width: 0.55rem;
+        padding-top: .36rem;
+        span{
+            display: inline-block;
+            width: 0.12rem;
+            height: 0.11rem;
+            background: #101010;
+            border-radius: 50%;
+        }
+    }
+}
+
+/*底部*/
+.wrap .footer{
+    height: 1.2rem;
+    background: #fff;
+    border-top: 1px solid #ebebeb;
+    padding: 0 0.67rem 0 0.49rem;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 7.5rem;
+    box-sizing: border-box;
+    a{
+        margin-top: .17rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .foicon1{
+            width: .51rem;
+            height: .56rem;
+        }
+        .foicon2{
+            width: .57rem;
+            height: .57rem;
+        }
+        .foicon3{
+            width: .51rem;
+            height: .59rem;
+        }
+        i{
+            font: 0.2rem/.41rem "微软雅黑";
+            color: #808080;
+        }
+    }
+    .active{
+        i{color:#ef6b16}
+        
+    }
+}
+
+
+
+
+

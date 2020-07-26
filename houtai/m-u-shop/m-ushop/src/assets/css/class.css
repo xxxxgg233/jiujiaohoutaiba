@@ -1,0 +1,128 @@
+@charset "utf-8";
+@import "public.css";
+.wrap {
+  height: 100%;
+}
+/*头部*/
+.wrap .header {
+  background: #f26b11;
+  padding: 0.43rem 0.23rem 0 0.24rem;
+}
+.wrap .header a {
+  padding: 0.28rem 0 0.28rem;
+  display: block;
+  width: .28rem;
+  height: .28rem;
+  background: #f26b11;
+  position: relative;
+}
+.wrap .header a i {
+  width: 0;
+  height: 0;
+  border-width: .14rem .14rem .14rem 0;
+  border-style: solid;
+  border-color: transparent #f26b11;
+  position: absolute;
+  right: 0;
+  top: .28rem;
+}
+.wrap .header a .left_arr {
+  border-right-color: #fff;
+  left: .1rem;
+}
+.wrap .header em {
+  padding-top: .24rem;
+  font: 0.34rem/0.38rem "微软雅黑";
+  color: #fff;
+}
+.wrap .header .menu span {
+  background: #fff;
+}
+.class {
+  border-top: .02rem solid #f1f1f1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #fff;
+  min-height: calc(100% - 1.28rem);
+}
+.class .classLeft {
+  border-right: 1px solid #d9d9d9;
+  width: 1.63rem;
+  min-height: 100%;
+}
+.class .classLeft ul {
+  padding-top: .38rem;
+}
+.class .classLeft ul li {
+  padding-bottom: .61rem;
+  padding-right: .4rem;
+}
+.class .classLeft ul li a {
+  display: block;
+  width: 1.55rem;
+  font: 0.26rem/0.52rem "微软雅黑";
+  color: #666666;
+  padding-left: .38rem;
+  border-left: 8px solid transparent;
+}
+.class .classLeft ul li .active {
+  border-left-color: #f26b11;
+  color: #f26b11;
+}
+.class .classRight {
+  padding-top: .43rem;
+}
+.class .classRight ul li {
+  padding-bottom: .86rem;
+}
+.class .classRight ul li .title {
+  padding: 0 .44rem .38rem .55rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.class .classRight ul li .title p {
+  font: 0.26rem/0.47rem "微软雅黑";
+  color: #454545;
+}
+.class .classRight ul li .title a {
+  font: 0.2rem/0.47rem "微软雅黑";
+  color: #666666;
+}
+.class .classRight ul li ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 0 .36rem 0 .26rem;
+}
+.class .classRight ul li ul li {
+  padding: 0;
+}
+.class .classRight ul li ul li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.class .classRight ul li ul li a img {
+  width: auto;
+  height: 1.52rem;
+  margin: 0 auto;
+}
+.class .classRight ul li ul li a p {
+  font: 0.24rem/0.67rem "微软雅黑";
+  color: #878787;
+  padding-bottom: .1rem;
+}

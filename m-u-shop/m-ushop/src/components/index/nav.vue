@@ -21,43 +21,44 @@
   </div>
 </template>
 <script>
+import getcate from "../../util/axios";
 export default {
   data() {
     return {
       list: [
         {
           id: 1,
-          navMsg: "推荐"
+          navMsg: "推荐",
         },
         {
           id: 2,
-          navMsg: "女装"
+          navMsg: "女装",
         },
         {
           id: 3,
-          navMsg: "鞋包"
+          navMsg: "鞋包",
         },
         {
           id: 4,
-          navMsg: "居家"
+          navMsg: "居家",
         },
         {
           id: 5,
-          navMsg: "母婴儿童"
+          navMsg: "母婴儿童",
         },
         {
           id: 6,
-          navMsg: "美食"
+          navMsg: "美食",
         },
         {
           id: 7,
-          navMsg: "果品"
+          navMsg: "果品",
         },
         {
           id: 8,
-          navMsg: "果品"
-        }
-      ]
+          navMsg: "果品",
+        },
+      ],
     };
   },
   methods: {
@@ -65,11 +66,11 @@ export default {
       this.$router.push({
         path: "/list",
         query: {
-          id
-        }
+          id,
+        },
       });
-    }
-  }
+    },
+  },
 };
 </script>
 <style lang="" scoped>

@@ -4,7 +4,7 @@
             <div class="id">
                 <a href="#"><img src="../../assets/images/mine.png" alt="#"></a>
                 <div>
-                    <p>悠溯</p>
+                    <p >{{getName}}</p>
                     <span>V1</span>
                 </div>
             </div>
@@ -16,9 +16,18 @@
 export default {
     data(){
         return {
-
+          nickname:''
         }
-    }
+    },
+    computed: {
+        getName(){
+            let data =''
+            data = sessionStorage.getItem('userInfo') ? JSON.parse(sessionStorage.getItem('userInfo')) : ''
+            return data.nickname
+        }
+    },
+    mounted() {
+    },
 };
 </script>
 <style lang="" scoped>

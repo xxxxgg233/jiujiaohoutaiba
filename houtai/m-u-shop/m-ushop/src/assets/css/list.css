@@ -1,0 +1,106 @@
+@charset "utf-8";
+@import "public.css";
+.wrap {
+  background: #fff;
+}
+/*头部*/
+.wrap .header {
+  background: #fff;
+  padding: 0.43rem 0.23rem 0 0.24rem;
+}
+.wrap .header a {
+  padding: 0.28rem 0 0.28rem;
+  display: block;
+  width: .28rem;
+  height: .28rem;
+  background: #fff;
+  position: relative;
+}
+.wrap .header a i {
+  width: 0;
+  height: 0;
+  border-width: .14rem .14rem .14rem 0;
+  border-style: solid;
+  border-color: transparent #fff;
+  position: absolute;
+  right: 0;
+  top: .28rem;
+}
+.wrap .header a .left_arr {
+  border-right-color: #101010;
+  left: .1rem;
+}
+.wrap .header .logo {
+  width: 1.5rem;
+  height: 0.29rem;
+}
+.wrap .header .logo img {
+  width: 1.5rem;
+  height: 0.29rem;
+}
+.wrap .header .menu span {
+  background: #101010;
+}
+.form form {
+  padding-top: .24rem;
+}
+.form form input {
+  width: 6.23rem;
+  height: .77rem;
+  background: #f26b11;
+  border-radius: 0.35rem;
+  text-align: center;
+  color: #fff;
+  font: 0.26rem/0.77rem "微软雅黑";
+  margin-left: .62rem;
+}
+.form form input::-webkit-input-placeholder {
+  color: #fff;
+}
+.form form input::-moz-placeholder {
+  color: #fff;
+}
+.list ul li {
+  height: 2.07rem;
+  margin: .28rem .25rem 0 .23rem;
+  border-bottom: 1px solid #d1d1d1;
+}
+.list ul li a {
+  display: block;
+}
+.list ul li a img {
+  float: left;
+  width: 1.47rem;
+  height: 1.6rem;
+  padding: .29rem 0 0 .2rem;
+}
+.list ul li a .fl {
+  height: 2.07rem;
+  margin-left: .43rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.list ul li a .fl h3 {
+  font: 0.26rem/0.37rem "微软雅黑";
+  color: #343434;
+}
+.list ul li a .fl p {
+  font: 0.3rem/0.53rem Arial;
+  color: #ed3638;
+}
+.list ul li a .fl p i {
+  font-size: .24rem;
+  font-family: "微软雅黑";
+}
+.list ul li a .fl span {
+  font: 0.26rem/0.41rem "微软雅黑";
+  color: #9b9b9b;
+}
