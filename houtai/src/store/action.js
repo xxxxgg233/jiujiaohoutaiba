@@ -5,7 +5,8 @@ import {
   getcateList,
   getspecsList,
   getgoodsList,
-  getmemberList
+  getmemberList,
+  getbannerList
 } from '../util/axios'
 
 export default {
@@ -14,8 +15,8 @@ export default {
     commit
   }) {
     getMenuList({
-        istree: 1
-      })
+      istree: 1
+    })
       .then(res => {
         if (res.data.code == 200) {
           commit('reqMenuList', res.data.list)
@@ -51,7 +52,7 @@ export default {
   getActionCateList({
     commit
   }) {
-    getcateList({istree:1})
+    getcateList({ istree: 1 })
       .then(res => {
         if (res.data.code == 200) {
           commit('reqCateList', res.data.list)
@@ -97,6 +98,17 @@ export default {
           let list = []
           list = res.data.list == null ? [] : res.data.list
           commit('reqMemberList', list)
+        }
+      })
+  },
+  //封装一个获取轮播图列表
+  getActionBannerList({
+    commit
+  }) {
+    getbannerList()
+      .then(res => {
+        if (res.data.code == 200) {
+          commit('reqBannerList', res.data.list)
         }
       })
   },

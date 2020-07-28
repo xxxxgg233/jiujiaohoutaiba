@@ -20,5 +20,8 @@ export default {
     },
     reqMemberList(state,payload){
         state.memberList = payload
+    },
+    reqBannerList(state,payload){
+        state.bannerList = payload
     }
 }

@@ -4,7 +4,7 @@
       <form onclick="return false">
         <label for="nikname">
           昵称：
-          <input type="text" id="nikname" v-model="userInfo.nikname" />
+          <input type="text" id="nikname" v-model="userInfo.nickname" />
         </label>
         <label for="phone">
           手机号：
@@ -29,7 +29,7 @@ export default {
   data() {
     return {
       userInfo: {
-        nikname: "",
+        nickname: "",
         phone: "",
         password: "",
         code: "",

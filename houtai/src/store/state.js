@@ -6,4 +6,5 @@ export default {
     specsList:[],//规格列表
     goodsList:[],//商品列表
     memberList:[],
+    bannerList:[],
 }

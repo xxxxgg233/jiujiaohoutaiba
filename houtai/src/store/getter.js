@@ -25,6 +25,9 @@ export default {
     },
     //huiyuan管理
     getStateMemberList(state){
-        return state.goodsList
-    }
+        return state.memberList
+    },
+    getStateBannerList(state){
+        return state.bannerList
+    },
 }
