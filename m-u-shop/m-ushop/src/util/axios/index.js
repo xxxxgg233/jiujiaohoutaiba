@@ -40,11 +40,9 @@ export function getgoodsinfo(parmas) {
 export function cartlist(parmas) {
     return http.get('/api/cartlist', { parmas })
 }
-//一件商品
 export function cartadd(data) {
     return http.post('/api/cartadd', data)
 }
-//一件商品
 export function cartdelete(data) {
     return http.post('/api/cartdelete', data)
 }

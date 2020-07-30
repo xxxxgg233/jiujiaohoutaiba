@@ -36,7 +36,9 @@ export default {
     return {};
   },
   components: {},
-  methods: {}
+  methods: {
+    
+  }
 };
 </script>
 

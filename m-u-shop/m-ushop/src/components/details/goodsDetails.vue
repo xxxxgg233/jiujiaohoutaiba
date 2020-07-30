@@ -14,12 +14,18 @@
 
 
 <script>
+import getgoodsinfo from '../../util/axios'
 export default {
   data() {
     return {};
   },
   components: {},
-  methods: {}
+  methods: {},
+  mounted() {
+    getgoodsinfo().then((res)=>{
+      console.log(res)
+    })
+  },
 };
 </script>
 

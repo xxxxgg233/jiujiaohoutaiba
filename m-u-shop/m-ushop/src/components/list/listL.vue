@@ -2,106 +2,53 @@
   <div>
     <div class="list">
       <ul>
-        <li v-for="(item,index) in list" :key="index">
-          <a class="clearfix" @click="toDetails(index)">
-            <img :src="item.imgSrc" alt="商品" />
+        <li v-for="item in goodsList" :key="item.id">
+          <a class="clearfix" @click="toDetails(item.id)">
+            <img :src="$imgUrl+item.img" alt="商品" />
             <div class="fl">
               <h3>
-                {{item.goodsName1}}
+                {{item.goodsname}}
                 <br />
-                {{item.goodsName2}}
               </h3>
               <p>
-                <i>￥</i>{{item.goodsPrice}}
+                <i>￥</i>{{item.price}}
               </p>
-              <span>{{item.goodsSpan}}</span>
+              <!-- <span>{{item.goodsSpan}}</span> -->
             </div>
           </a>
         </li>
-        <!-- <li>
-          <a class="clearfix" @click="select(index)">
-            <img src="../../assets/images/pic.jpg" alt="商品" />
-            <div class="fl">
-              <h3>滋源修护滋养洗发香乳 520ml*2瓶</h3>
-              <p>
-                <i>￥</i>123.00
-              </p>
-              <span>3625条评论</span>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a class="clearfix" @click="select(index)">
-            <img src="../../assets/images/pic.jpg" alt="商品" />
-            <div class="fl">
-              <h3>
-                阿道夫修护滋养洗发香乳 洗发水 持久留香
-                <br />520ml*2瓶 旗舰店正品焕新升级款
-              </h3>
-              <p>
-                <i>￥</i>123.00
-              </p>
-              <span>3625条评论</span>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a class="clearfix" @click="select(index)">
-            <img src="../../assets/images/pic.jpg" alt="商品" />
-            <div class="fl">
-              <h3>滋源修护滋养洗发香乳 520ml*2瓶</h3>
-              <p>
-                <i>￥</i>123.00
-              </p>
-              <span>3625条评论</span>
-            </div>
-          </a>
-        </li>-->
       </ul>
     </div>
   </div>
 </template>
 <script>
+import {getgoods} from '../../util/axios'
 export default {
-  data() {
-    return {
-      list: [
-        {
-          id: 1,
-          goodsName1: "阿道夫修护滋养洗发香乳 洗发水 持久留香",
-          goodsName2: "520ml*2瓶 旗舰店正品焕新升级款",
-          goodsPrice: "123.00",
-          goodsSpan: "3625条评论",
-          imgSrc: require("../../assets/images/pic.jpg")
-        },
-        {
-          id: 2,
-          goodsName1: "滋源修护滋养洗发香乳 520ml*2瓶",
-          goodsName2: "",
-          goodsPrice: "123.00",
-          goodsSpan: "36条评论",
-          imgSrc: require("../../assets/images/pic.jpg")
-        },
-        {
-          id: 3,
-          goodsName1: "阿道夫修护滋养洗发香乳 洗发水 持久留香",
-          goodsName2: "520ml*2瓶 旗舰店正品焕新升级款",
-          goodsPrice: "123.00",
-          goodsSpan: "3625条评论",
-          imgSrc:require("../../assets/images/pic.jpg")
-        },
-        {
-          id: 4,
-          goodsName1: "滋源修护滋养洗发香乳 520ml*2瓶",
-          goodsName2: "",
-          goodsPrice: "123.00",
-          goodsSpan: "3625条评论",
-          imgSrc: require("../../assets/images/pic.jpg")
+    data() {
+        return {
+            goodsList:[]
         }
-      ]
-    };
-  }
-};
+    },
+    mounted() {
+        console.log(this.$route)
+        //组件加载调取接口
+        this.getGoods()
+    },
+    methods:{
+        //封装获取商品列表的方法
+        getGoods(){
+            getgoods({
+                fid:this.$route.query.id
+            })
+            .then(res=>{
+                console.log(res)
+                if(res.code==200){
+                    this.goodsList = res.list
+                }
+            })
+        },
+    }
+}
 </script>
 <style lang="" scoped>
 .list ul li {

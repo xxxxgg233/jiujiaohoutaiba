@@ -16,6 +16,7 @@ import gMethods from './methods'
 for(let i in gMethods){
   Vue.prototype[i]=gMethods[i]
 }
+Vue.prototype.$imgUrl = 'http://localhost:3000'
 
 //引入组件
 import gCommon from './common'
