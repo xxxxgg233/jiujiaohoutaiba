@@ -15,6 +15,14 @@ code {
 .homeCom .titleList {
   display        : flex;
   justify-content: space-around;
+  /* position       : fixed;
+  top            : 84px;
+  left           : 0;
+  z-index        : 100; */
+}
+
+.m-index {
+  position: relative;
 }
 
 .homeCom .titleList li {
@@ -113,7 +121,7 @@ code {
 }
 
 .homeCom .homeReccom {
-  padding-top: 20px;
+  /* padding-top: 20px; */
 }
 
 .homeCom .homeReccom .remd_tl {
@@ -203,12 +211,15 @@ code {
 }
 
 .homeCom .homeReccom .remd_newsg .m-sglst,
-.homeCom .m-hmhot .m-sglst {
+.homeCom .m-hmhot .m-sglst,
+.homeCom .m-hmsrch .m-sglst
+{
   position: relative;
 }
 
 .homeCom .homeReccom .remd_newsg .m-sglst .m-sgitem,
-.homeCom .m-hmhot .m-sglst .m-sgitem {
+.homeCom .m-hmhot .m-sglst .m-sgitem ,
+.homeCom .m-hmsrch .m-sglst .m-sgitem {
   color       : #333;
   display     : -webkit-box;
   display     : -webkit-flex;
@@ -218,7 +229,8 @@ code {
 }
 
 .homeCom .homeReccom .remd_newsg .m-sglst .m-sgitem .sgfr,
-.homeCom .m-hmhot .m-sgitem .sgfr {
+.homeCom .m-hmhot .m-sgitem .sgfr ,
+.homeCom .m-hmsrch .m-sglst .sgfr {
   display         : -webkit-box;
   display         : -webkit-flex;
   display         : -ms-flexbox;
@@ -230,24 +242,24 @@ code {
   flex            : 1 1 auto;
 }
 
-.homeCom .homeReccom .remd_newsg .m-sglst .m-sgitem .f-bd {}
-
-.homeCom .homeReccom .remd_newsg .m-sglst .m-sgitem .f-bd-btm {}
 
 .homeCom .homeReccom .remd_newsg .m-sglst .m-sgitem .f-bd-btm .sgchfl,
-.homeCom .m-hmhot .m-sglst .m-sgitem .f-bd-btm .sgchfl {
+.homeCom .m-hmhot .m-sglst .m-sgitem .f-bd-btm .sgchfl ,
+.homeCom .m-hmsrch .m-sglst .m-sgitem .f-bd-btm .sgchfl {
   padding: 6px 0;
   width  : 100%;
 }
 
 .homeCom .homeReccom .remd_newsg .m-sglst .m-sgitem .f-bd-btm .sgchfl .sgtl,
-.homeCom .m-hmhot .m-sglst .m-sgitem .f-bd-btm .sgchfl .sgtl {
+.homeCom .m-hmhot .m-sglst .m-sgitem .f-bd-btm .sgchfl .sgtl ,
+.homeCom .m-hmsrch .m-sglst .m-sgitem .f-bd-btm .sgchfl .sgtl {
   font-size: 17px;
   width    : 100%;
 }
 
 .homeCom .homeReccom .remd_newsg .m-sglst .m-sgitem .f-bd-btm .sgchfl .f-thide,
-.homeCom .m-hmhot .m-sglst .m-sgitem .f-bd-btm .sgchfl .f-thide {
+.homeCom .m-hmhot .m-sglst .m-sgitem .f-bd-btm .sgchfl .f-thide ,
+.homeCom .m-hmsrch .m-sglst .m-sgitem .f-bd-btm .sgchfl .f-thide {
   overflow     : hidden;
   text-overflow: ellipsis;
   white-space  : nowrap;
@@ -255,13 +267,15 @@ code {
 }
 
 .homeCom .homeReccom .remd_newsg .m-sglst .m-sgitem .f-bd-btm .sgchfl .sginfo,
-.homeCom .m-hmhot .m-sglst .m-sgitem .f-bd-btm .sgchfl .sginfo {
+.homeCom .m-hmhot .m-sglst .m-sgitem .f-bd-btm .sgchfl .sginfo ,
+.homeCom .m-hmsrch .m-sglst .m-sgitem .f-bd-btm .sgchfl .sginfo {
   font-size: 12px;
   color    : #888;
 }
 
 .homeCom .homeReccom .remd_newsg .m-sglst .m-sgitem .f-bd-btm .sgchfl .sginfo .sghot,
-.homeCom .m-hmhot .m-sglst .m-sgitem .f-bd-btm .sgchfl .sginfo .sghot {
+.homeCom .m-hmhot .m-sglst .m-sgitem .f-bd-btm .sgchfl .sginfo .sghot ,
+.homeCom .m-hmsrch .m-sglst .m-sgitem .f-bd-btm .sgchfl .sginfo .sghot {
   display     : inline-block;
   width       : 12px;
   height      : 8px;
@@ -269,7 +283,8 @@ code {
 }
 
 .homeCom .homeReccom .remd_newsg .m-sglst .m-sgitem .f-bd-btm .sgchfr,
-.homeCom .m-hmhot .m-sglst .m-sgitem .f-bd-btm .sgchfr {
+.homeCom .m-hmhot .m-sglst .m-sgitem .f-bd-btm .sgchfr ,
+.homeCom .m-hmsrch .m-sglst .m-sgitem .f-bd-btm .sgchfr {
   display            : -webkit-box;
   display            : -webkit-flex;
   display            : -ms-flexbox;
@@ -367,95 +382,117 @@ code {
   font-size              : 17px;
   color                  : #999;
   margin-left            : -10px;
-  display: flex;
+  display                : flex;
 }
 
 .m-hmhot .hotcont .m-sglst .sgfl-cred {
+  color: #000;
+
+}
+
+.m-hmhot .hotcont .m-sglst .m-sgitem:nth-child(1) .sgfl-cred,
+.m-hmhot .hotcont .m-sglst .m-sgitem:nth-child(2) .sgfl-cred,
+.m-hmhot .hotcont .m-sglst .m-sgitem:nth-child(3) .sgfl-cred {
   color: #df3436;
 }
 
 
-.m-hmsrch{background: #fbfcfd;}
-.m-hmsrch .m-input{padding: 15px 10px;}
+.m-hmsrch {
+  background: #fbfcfd;
+}
+
+.m-hmsrch .m-input {
+  padding: 15px 10px;
+}
 
 .m-input .u-svg-srch {
-  position: absolute;
-  left: 0;
-  top: 9px;
-  margin: 0 8px;
+  position      : absolute;
+  left          : 0;
+  top           : 9px;
+  margin        : 0 8px;
   vertical-align: middle;
 }
+
 .m-input .inputcover {
-  position: relative;
-  width: 100%;
-  height: 30px;
-  padding: 0 30px;
-  box-sizing: border-box;
-  background: #ebecec;
+  position     : relative;
+  width        : 100%;
+  height       : 30px;
+  padding      : 0 30px;
+  box-sizing   : border-box;
+  background   : #ebecec;
   border-radius: 30px;
 }
+
 .m-input .input {
-  width: 100%;
-  height: 30px;
+  width      : 100%;
+  height     : 30px;
   line-height: 18px;
-  background: rgba(0,0,0,0);
-  font-size: 14px;
-  color: #333;
+  background : rgba(0, 0, 0, 0);
+  font-size  : 14px;
+  color      : #333;
 }
+
 .m-input .holder {
-  position: absolute;
-  left: 30px;
-  top: 5px;
-  font-size: 14px;
-  color: #c9c9c9;
-  background: rgba(0,0,0,0);
+  position      : absolute;
+  left          : 30px;
+  top           : 5px;
+  font-size     : 14px;
+  color         : #c9c9c9;
+  background    : rgba(0, 0, 0, 0);
   pointer-events: none;
 }
+
 .m-hotlist {
   padding: 15px 10px 0;
 }
 
 .m-hotlist .title {
-  font-size: 12px;
+  font-size  : 12px;
   line-height: 12px;
-  color: #666;
+  color      : #666;
 }
+
 .m-hotlist .list {
   margin: 10px 0 7px;
 }
+
 .m-hotlist .item {
   border-radius: 50%;
-  display: inline-block;
-  height: 32px;
-  margin-right: 8px;
+  display      : inline-block;
+  height       : 32px;
+  margin-right : 8px;
   margin-bottom: 8px;
-  padding: 0 14px;
-  font-size: 14px;
-  line-height: 32px;
+  padding      : 0 14px;
+  font-size    : 14px;
+  line-height  : 32px;
+  color        : #333;
+}
+
+a,
+a:visited {
   color: #333;
 }
 
-a, a:visited {
-  color: #333;
-}
 .f-bd:after {
-  position: absolute;
-  z-index: 2;
-  content: "";
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  box-sizing: border-box;
-  width: 100%;
-  height: 100%;
+  position                : absolute;
+  z-index                 : 2;
+  content                 : "";
+  top                     : 0;
+  left                    : 0;
+  pointer-events          : none;
+  box-sizing              : border-box;
+  width                   : 100%;
+  height                  : 100%;
   -webkit-transform-origin: top left;
-  -ms-transform-origin: top left;
-  transform-origin: top left;
-  border: 0 solid rgba(0,0,0,.1);
+  -ms-transform-origin    : top left;
+  transform-origin        : top left;
+  border                  : 0 solid rgba(0, 0, 0, .1);
 }
+
 .f-bd-full:after {
   border-width: 1px;
 }
+
 .m-hotlist .item:after {
   border-radius: 60px;
 }
@@ -463,22 +500,103 @@ a, a:visited {
 
 
 
-label, summary {
+label,
+summary {
   cursor: default;
 }
+
 .f-bd {
   position: relative;
 }
 
 .u-svg {
-  display: inline-block;
-  vertical-align: middle;
+  display            : inline-block;
+  vertical-align     : middle;
   background-position: 0 0;
-  background-size: contain;
-  background-repeat: no-repeat;
+  background-size    : contain;
+  background-repeat  : no-repeat;
 }
+
 .u-svg-srch {
-  width: 13px;
-  height: 13px;
+  width           : 13px;
+  height          : 13px;
   background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNiAyNiI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBmaWxsPSIjYzljOWNhIiBkPSJNMjUuMTgxIDIzLjUzNWwtMS40MTQgMS40MTQtNy4zMTUtNy4zMTRBOS45NjYgOS45NjYgMCAwIDEgMTAgMjBDNC40NzcgMjAgMCAxNS41MjMgMCAxMFM0LjQ3NyAwIDEwIDBzMTAgNC40NzcgMTAgMTBjMCAyLjM0Mi0uODExIDQuNDktMi4xNiA2LjE5NWw3LjM0MSA3LjM0ek0xMCAyYTggOCAwIDEgMCAwIDE2IDggOCAwIDAgMCAwLTE2eiIvPjwvc3ZnPg==);
+}
+
+.u-hmsprt {
+  background     : url(//s3.music.126.net/mobile-new/img/index_icon_2x.png?5207a28…=) no-repeat;
+  background-size: 166px 97px;
+}
+
+.u-earp {
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMiAyMCI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBmaWxsPSIjMDQwMDAwIiBkPSJNMjIgMTYuNzc3YzAgMS4yMzMtMS4xMjEgMi4yMzMtMi41MDYgMi4yMzMtMS4zODQgMC0yLjUwNi0xLTIuNTA2LTIuMjMzdi0yLjU1M2MwLTEuMjM0IDEuMTIyLTIuMjMzIDIuNTA2LTIuMjMzLjE3NCAwIC4zNDMuMDE3LjUwNi4wNDZ2LTEuMzdoLS4wMzNjLjAxNy0uMjIuMDMzLS40NDEuMDMzLS42NjZhOCA4IDAgMCAwLTE2IDBjMCAuMjI1LjAxNi40NDYuMDM0LjY2Nkg0djEuMzdjLjE2My0uMDI5LjMzMy0uMDQ2LjUwNS0uMDQ2IDEuMzg0IDAgMi41MDYuOTk5IDIuNTA2IDIuMjMzdjIuNTUzYzAgMS4yMzMtMS4xMjIgMi4yMzMtMi41MDYgMi4yMzNTMiAxOC4wMTEgMiAxNi43Nzd2LTIuNTUzYzAtLjI1OC4wNTktLjUwMS4xNDgtLjczQS45ODIuOTgyIDAgMCAxIDIgMTMuMDAxdi0yLjY2N2MwLS4wMjMuMDEyLS4wNDMuMDEzLS4wNjctLjAwNC0uMDg4LS4wMTMtLjE3Ni0uMDEzLS4yNjYgMC01LjUyMyA0LjQ3Ny0xMCAxMC0xMHMxMCA0LjQ3NyAxMCAxMGMwIC4wOS0uMDA5LjE3OC0uMDE0LjI2Ni4wMDIuMDI0LjAxNC4wNDQuMDE0LjA2N3YyYS45ODguOTg4IDAgMCAxLS4zNi43NTNjLjIyNC4zMzQuMzYuNzIuMzYgMS4xMzh2Mi41NTIiIG9wYWNpdHk9Ii4xNSIvPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgZmlsbD0iI2ZmZiIgZD0iTTIwIDE2Ljc3N2MwIDEuMjMzLTEuMTIxIDIuMjMzLTIuNTA2IDIuMjMzLTEuMzg0IDAtMi41MDYtMS0yLjUwNi0yLjIzM3YtMi41NTNjMC0xLjIzNCAxLjEyMi0yLjIzMyAyLjUwNi0yLjIzMy4xNzQgMCAuMzQzLjAxNy41MDYuMDQ2di0xLjM3aC0uMDMzYy4wMTctLjIyLjAzMy0uNDQxLjAzMy0uNjY2YTggOCAwIDAgMC0xNiAwYzAgLjIyNS4wMTYuNDQ2LjAzNC42NjZIMnYxLjM3Yy4xNjMtLjAyOS4zMzMtLjA0Ni41MDUtLjA0NiAxLjM4NCAwIDIuNTA2Ljk5OSAyLjUwNiAyLjIzM3YyLjU1M2MwIDEuMjMzLTEuMTIyIDIuMjMzLTIuNTA2IDIuMjMzUzAgMTguMDExIDAgMTYuNzc3di0yLjU1M2MwLS4yNTguMDU5LS41MDEuMTQ4LS43M0EuOTgyLjk4MiAwIDAgMSAwIDEzLjAwMXYtMi42NjdjMC0uMDIzLjAxMi0uMDQzLjAxMy0uMDY3LS4wMDQtLjA4OC0uMDEzLS4xNzYtLjAxMy0uMjY2IDAtNS41MjMgNC40NzctMTAgMTAtMTBzMTAgNC40NzcgMTAgMTBjMCAuMDktLjAwOS4xNzgtLjAxNC4yNjYuMDAyLjAyNC4wMTQuMDQ0LjAxNC4wNjd2MmEuOTg4Ljk4OCAwIDAgMS0uMzYuNzUzYy4yMjQuMzM0LjM2LjcyLjM2IDEuMTM4djIuNTUyIi8+PC9zdmc+);
+}
+
+.m-sgitem .sgchply {
+  display            : inline-block;
+  width              : 22px;
+  height             : 22px;
+  background-position: -24px 0;
+}
+
+
+
+
+/*swiper*/
+.swiper-container {
+  width        : 100%;
+  height       : 100%;
+  margin-bottom: 20px;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size : 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display                : -webkit-box;
+  display                : -ms-flexbox;
+  display                : -webkit-flex;
+  display                : flex;
+  -webkit-box-pack       : center;
+  -ms-flex-pack          : center;
+  -webkit-justify-content: center;
+  justify-content        : center;
+  -webkit-box-align      : center;
+  -ms-flex-align         : center;
+  -webkit-align-items    : center;
+  align-items            : center;
+}
+
+.homeReccom .imgUrl {
+  width: 100%;
+}
+
+
+/* 搜索关闭 */
+.m-input .close {
+  position   : absolute;
+  right      : 0;
+  top        : 0;
+  width      : 30px;
+  height     : 30px;
+  line-height: 28px;
+  text-align : center;
+  margin     : 0;
+}
+
+.m-input .u-svg-empty.z-show {
+  display: inline-block;
+}
+
+.m-input .u-svg-empty {
+  display       : none;
+  vertical-align: middle;
+}
+
+.u-svg-empty {
+  width           : 14px;
+  height          : 14px;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyOCAyOCI+PGcgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBmaWxsPSIjYmNiZGJkIiBkPSJNMTQgMGM3LjczMiAwIDE0IDYuMjY4IDE0IDE0cy02LjI2OCAxNC0xNCAxNFMwIDIxLjczMiAwIDE0IDYuMjY4IDAgMTQgMHoiLz48cGF0aCBkPSJNMTkgOUw5IDE5TTkgOWwxMCAxMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZWJlY2ViIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIi8+PC9nPjwvc3ZnPg==);
 }
