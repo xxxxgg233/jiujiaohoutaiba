@@ -35,12 +35,12 @@ export default {
           goodsid: this.$route.query.id,
           num: 1, //数量 是取出当前产品数量
         }).then((res) => {
-          if (res.code == 200) {
-            console.log(res.msg);
+          if (res.data.code == 200) {
+            console.log(res.data.msg);
             //跳转到购物车页面
-            this.$router.push("/car");
+            this.$router.push("/cart");
           } else {
-            console.log(res.msg);
+            console.log(res.data.msg);
           }
         });
       } else {

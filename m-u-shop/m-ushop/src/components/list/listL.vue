@@ -31,19 +31,18 @@ export default {
     },
     mounted() {
         console.log(this.$route)
-        //组件加载调取接口
         this.getGoods()
     },
     methods:{
-        //封装获取商品列表的方法
         getGoods(){
             getgoods({
                 fid:this.$route.query.id
             })
             .then(res=>{
                 console.log(res)
-                if(res.code==200){
-                    this.goodsList = res.list
+                if(res.data.code==200){
+                    this.goodsList = res.data.list
+
                 }
             })
         },

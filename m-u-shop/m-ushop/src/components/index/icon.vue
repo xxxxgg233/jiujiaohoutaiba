@@ -3,7 +3,7 @@
     <div class="icon">
       <ul>
         <li v-for="item in list" :key="item.key">
-          <a href="#">
+          <a :href="item.hhref">
             <img :src="item.imgSrc" alt />
             <p>{{item.msg}}</p>
           </a>
@@ -32,22 +32,26 @@ export default {
         {
           id: 1,
           imgSrc: require("../../assets/images/icon_1.jpg"),
-          msg: "限时抢购"
+          msg: "限时抢购",
+          hhref:'#'
         },
         {
           id: 2,
           imgSrc: require("../../assets/images/icon_2.jpg"),
-          msg: "积分商城"
+          msg: "积分商城",
+          hhref:'#'
         },
         {
           id: 3,
           imgSrc: require("../../assets/images/icon_3.jpg"),
-          msg: "联系我们"
+          msg: "联系我们",
+          hhref:'#'
         },
         {
           id: 4,
           imgSrc: require("../../assets/images/icon_4.jpg"),
-          msg: "商品分类"
+          msg: "商品分类",
+          hhref:'/class'
         }
       ]
     };

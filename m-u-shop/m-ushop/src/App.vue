@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <div class="wrap">
-      
       <router-view></router-view>
     </div>
   </div>
@@ -17,10 +16,7 @@ export default {
   components: {
   },
   methods: {
-    // getgift(e){
-    //   console.log(e)
-    //   this.msg3=e
-    // }
+
   }
 };
 </script>

@@ -4,7 +4,7 @@
             <ul>
                 <li>
                     <p>商品金额</p>
-                    <em>￥68.00</em>
+                    <em>￥{{getPrice.toFixed(2)}}</em>
                 </li>
                 <li>
                     <p>运费</p>
@@ -26,7 +26,7 @@
             <div class="billBottom">
                 <div class="pay">
                     <p>实付金额 :&nbsp;</p>
-                    <em>￥68.00</em>
+                    <em>￥{{getPrice.toFixed(2)}}</em>
                 </div>
                 <input type="button" value="提交订单">
             </div>
@@ -46,7 +46,16 @@ export default {
     //   console.log(e)
     //   this.msg3=e
     // }
-  }
+  },
+  computed: {
+    getPrice() {
+      let data = "";
+      data = sessionStorage.getItem("priceAll1")
+        ? JSON.parse(sessionStorage.getItem("priceAll1"))
+        : "";
+      return data
+    },
+  },
 };
 </script>
 

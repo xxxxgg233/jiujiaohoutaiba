@@ -8,7 +8,7 @@
   </div>
 </template>
 <script>
-import getbanner from '../../util/axios'
+import {getbanner} from '../../util/axios'
 export default {
   data() {
     return {

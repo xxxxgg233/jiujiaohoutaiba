@@ -3,7 +3,6 @@
     <div class="wrap">
       <head1></head1>
       <cartIn></cartIn>
-      <refer></refer>
     </div>
   </div>
 </template>
@@ -12,7 +11,6 @@
 <script>
 import head1 from "./cart/header";
 import cartIn from "./cart/cartIn";
-import refer from "./cart/refer";
 
 export default {
   data() {
@@ -20,13 +18,10 @@ export default {
   },
   components: {
     head1,
-    cartIn,refer
+    cartIn,
   },
   methods: {
-    // getgift(e){
-    //   console.log(e)
-    //   this.msg3=e
-    // }
+  
   }
 };
 </script>

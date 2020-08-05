@@ -2,7 +2,7 @@
   <div>
     <div class="address">
             <div class="left">
-                <p class="name">收货人：YouSu</p>
+                <p class="name">收货人：{{getName}}</p>
                 <p class="tel fr">10000000000</p>
                 <p>收货地址：北京市海淀区隐泉路清林苑6号楼中公优就业总部3层</p>
             </div>
@@ -23,7 +23,15 @@ export default {
     //   console.log(e)
     //   this.msg3=e
     // }
-  }
+  },computed: {
+    getName() {
+      let data = "";
+      data = sessionStorage.getItem("userInfo")
+        ? JSON.parse(sessionStorage.getItem("userInfo"))
+        : "";
+      return data.nickname;
+    },
+  },
 };
 </script>
 

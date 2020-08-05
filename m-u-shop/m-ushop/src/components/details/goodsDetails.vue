@@ -14,7 +14,7 @@
 
 
 <script>
-import getgoodsinfo from '../../util/axios'
+import {getgoodsinfo} from '../../util/axios'
 export default {
   data() {
     return {};
